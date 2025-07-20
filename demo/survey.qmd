@@ -1,0 +1,27 @@
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+# Welcome to our survey!
+
+<br>
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
+)
+
+sd_next()
+```
+
+:::

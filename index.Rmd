@@ -47,7 +47,6 @@ xaringanExtra::use_xaringan_extra(c(
   "tile_view", "panelset", "share_again"))
 xaringanExtra::style_share_again(share_buttons = "none")
 xaringanExtra::use_extra_styles(
-  hover_code_line = TRUE,
   mute_unhighlighted_code = FALSE
 )
 
@@ -146,7 +145,7 @@ class: center, middle, inverse
 --
 
 <center>
-<img src="images/logo.png" width=300>
+<img src="images/logo_surveydown.png" width=300>
 </center>
 
 ---
@@ -173,42 +172,18 @@ class: middle
 
 ---
 
-class: center
+class: center, middle, inverse
 
-## What is `surveydown`
-
-<center>
-<img src="images/technologies.svg" width=90%>
-</center>
+# What is `surveydown`?
 
 ---
 
-class: center
-
-# Components
-
-<br>
-
-.leftcol45[
-
-### `survey.qmd` 
-
-A **Quarto doc** defining the main survey content (pages, text, images, questions, etc).
-
-
-]
-
-.rightcol45[
-
-### `app.R` 
-
-An **R script** defining the survey Shiny app. It sets up the database and server, and launches the survey.
-
-]
+background-image: url("images/images/Slide10.png")
+background-size: cover
 
 ---
 
-.leftcol[.code50[
+.leftcol40[.code80[
 
 ````{markdown}
 ---
@@ -227,44 +202,32 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "mc",
-  id    = "penguins",
-  label = "What's your favorite penguin?",
-  option = c(
-    "Adélie"    = "adelie",
-    "Chinstrap" = "chinstrap",
-    "Gentoo"    = "gentoo"
-  )
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
 )
 
 sd_next()
 ```
 
 :::
-
-::: {.sd_page id=end}
-
-This is the last page of the survey.
-
-```{r}
-sd_close()
-```
-
-:::
-
 ````
 
 ]]
 
-.rightcol[
+.rightcol60[
 
-# .center[survey.qmd]
+.center[`survey.qmd` --> Rendered survey]
+
+<center>
+<img src="images/survey-app.png" width=90%>
+</center>
 
 ]
 
 ---
 
-.leftcol[.code50[
+.leftcol40[.code80[
 
 ````{markdown}
 --- #<<
@@ -272,7 +235,47 @@ format: html #<<
 echo: false #<<
 warning: false #<<
 --- #<<
- 
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+# Welcome to our survey!
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
+)
+
+sd_next()
+```
+
+:::
+````
+
+]]
+
+.rightcol60[
+
+### .center[Standard YAML header<br>w/options for "clean" output]
+
+]
+
+---
+
+.leftcol40[.code80[
+
+````{markdown}
+---
+format: html
+echo: false
+warning: false
+---
+
 ```{r} #<<
 library(surveydown) #<<
 ``` #<<
@@ -283,47 +286,30 @@ library(surveydown) #<<
 
 ```{r}
 sd_question(
-  type  = "mc",
-  id    = "penguins",
-  label = "What's your favorite penguin?",
-  option = c(
-    "Adélie"    = "adelie",
-    "Chinstrap" = "chinstrap",
-    "Gentoo"    = "gentoo"
-  )
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
 )
 
 sd_next()
 ```
 
 :::
-
-::: {.sd_page id=end}
-
-This is the last page of the survey.
-
-```{r}
-sd_close()
-```
-
-:::
-
 ````
 
 ]]
 
-.rightcol[
+.rightcol60[
 
-YAML Header 
+<br><br><br><br>
 
-<br>
-Load `surveydown` package
+### .center[Load the `surveydown` package]
 
 ]
 
 ---
 
-.leftcol[.code50[
+.leftcol40[.code80[
 
 ````{markdown}
 ---
@@ -333,7 +319,7 @@ warning: false
 ---
 
 ```{r}
-library(surveydown)
+library(surveydown) 
 ```
 
 ::: {.sd_page id=welcome} #<<
@@ -342,52 +328,76 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "mc",
-  id    = "penguins",
-  label = "What's your favorite penguin?",
-  option = c(
-    "Adélie"    = "adelie",
-    "Chinstrap" = "chinstrap",
-    "Gentoo"    = "gentoo"
-  )
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
 )
 
 sd_next()
 ```
 
 ::: #<<
-
-::: {.sd_page id=end} #<<
-
-This is the last page of the survey.
-
-```{r}
-sd_close()
-```
-
-::: #<<
-
 ````
 
 ]]
 
-.rightcol[
+.rightcol60[
 
-Define pages using "fences"
+<br><br><br><br><br><br>
 
-````{markdown}
-::: {.sd_page id=page_id}
-
-Page content
-
-:::
-````
+### .center[Use Quarto fences (`:::`)<br>to define survey pages]
 
 ]
 
 ---
 
-.leftcol[.code50[
+.leftcol40[.code80[
+
+````{markdown}
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown) 
+```
+
+::: {.sd_page id=welcome} 
+
+# Welcome to our survey! #<<
+   #<<
+```{r} #<<
+sd_question( #<<
+  type  = "text", #<<
+  id    = "name", #<<
+  label = "What's your name?" #<<
+) #<<
+   #<<
+sd_next() #<<
+``` #<<
+
+::: 
+````
+
+]]
+
+.rightcol60[
+
+<br><br><br><br><br><br><br><br>
+
+### .center[Page content]
+
+- Markdown for page content (text, images, etc.)
+- `sd_question()` for survey questions
+- `sd_next()` for next button
+
+]
+
+---
+
+.leftcol40[.code80[
 
 ````{markdown}
 ---
@@ -402,48 +412,135 @@ library(surveydown)
 
 ::: {.sd_page id=welcome}
 
-# Welcome to our survey! #<<
-
-```{r} #<<
-sd_question( #<<
-  type  = "mc", #<<
-  id    = "penguins", #<<
-  label = "What's your favorite penguin?", #<<
-  option = c( #<<
-    "Adélie"    = "adelie", #<<
-    "Chinstrap" = "chinstrap", #<<
-    "Gentoo"    = "gentoo" #<<
-  ) #<<
-) #<<
-
-sd_next() #<<
-``` #<<
-
-:::
-
-::: {.sd_page id=end}
-
-This is the last page of the survey.
+# Welcome to our survey!
 
 ```{r}
-sd_close()
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "What's your name?"
+)
+
+sd_next()
 ```
 
 :::
-
 ````
 
 ]]
 
-.rightcol[
+.rightcol60[
 
-<br><br><br><br><br>Use markdown for page content
+.center[`survey.qmd` --> Rendered survey]
 
-Use `sd_question()` in code chunk for survey questions
-
-<br><br>Use `sd_next()` for next button
+<center>
+<img src="images/survey-app.png" width=90%>
+</center>
 
 ]
+
+---
+
+class: middle, inverse
+
+# .center[Problem:<br>Quarto renders to _static_ html page]
+
+--
+
+.leftcol[
+
+<center>
+<img src="images/logo_shiny.png" width=300>
+</center>
+
+]
+
+.rightcol[
+<br><br>
+# .left[To the rescue!]
+
+]
+
+---
+
+background-image: url("images/images/Slide11.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide12.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide13.png")
+background-size: cover
+
+---
+
+class: center
+
+# A complete `surveydown` survey
+
+<br>
+
+.leftcol45[
+
+### `survey.qmd` 
+
+.font120[A **Quarto doc** defining the survey content (pages, text, images, questions, etc).]
+
+]
+
+.rightcol45[
+
+### `app.R` 
+
+.font120[An **R script** defining the<br>survey Shiny app.]
+
+]
+
+---
+
+.leftcol65[.code90[
+
+Typical `app.R` file
+
+```{r}
+#| eval: false
+
+library(surveydown)
+
+ui <- sd_ui()
+
+server <- function(input, output, session) {
+  
+  sd_server()
+  
+}
+
+shiny::shinyApp(ui = ui, server = server)
+```
+
+]]
+
+.rightcol45[
+<br><br>
+Load `surveydown` package
+
+Render the `survey.qmd` file 
+
+]
+
+
+
+
+
+
+
+
+
+
 
 ---
 

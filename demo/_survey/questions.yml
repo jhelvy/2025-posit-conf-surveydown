@@ -1,0 +1,6 @@
+# ! JUST READ - don't change the content of this file
+# Question structure extracted from survey.html
+name:
+  type: text
+  label: What’s your name?
+

@@ -407,3 +407,11 @@ img {
 .no-slide-number .remark-slide-number {
   display: none;
 }
+
+
+/* Custom */
+
+.hljs-github .hljs-title, .hljs-github .hljs-section, .hljs-github .hljs-selector-id {
+     color: #000;
+     font-weight: 400;
+}
