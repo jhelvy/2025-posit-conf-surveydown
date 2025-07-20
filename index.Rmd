@@ -1,6 +1,7 @@
 ---
-title: "Getting started with surveydown"
-date: May 29, 2025
+title: "Introducing {surveydown}:"
+subtitle: "An open-source platform for programmable, markdown-based surveys"
+date: "posit::conf(2025)"
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
@@ -18,90 +19,81 @@ output:
       ratio: "16:9"
 ---
 
-```{r setup, child="../setup.Rmd"}
+```{r setup, include=FALSE}
+library(knitr)
+library(fontawesome)
+library(metathis)
+library(surveydown)
+
+options(
+    htmltools.dir.version = FALSE,
+    knitr.table.format = "html",
+    knitr.kable.NA = '',
+    dplyr.width = Inf,
+    width = 250
+)
+knitr::opts_chunk$set(
+    warning = FALSE,
+    message = FALSE,
+    fig.path = "figs/",
+    fig.width = 7.252,
+    fig.height = 4,
+    comment = "#>",
+    fig.retina = 3
+)
+
+# Setup xaringanExtra options
+xaringanExtra::use_xaringan_extra(c(
+  "tile_view", "panelset", "share_again"))
+xaringanExtra::style_share_again(share_buttons = "none")
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = FALSE
+)
+
+# Set up website metadata
+meta() %>%
+  meta_general(
+    description = rmarkdown::metadata$subtitle,
+    generator = "xaringan and remark.js"
+  ) %>%
+  meta_name("github-repo" = "jhelvy/2025-posit-conf-surveydown") %>%
+  meta_social(
+    title = rmarkdown::metadata$title,
+    url = "https://www.jhelvy.com/slides",
+    og_type = "website",
+    og_author = "John Paul Helveston",
+    twitter_card_type = "summary_large_image"
+  )
 ```
 
 ---
 
-# Meet your instructor!
+background-image: url("images/blue.jpg")
+background-size: cover
+class: inverse
 
-.leftcol30[.circle[
+<br><br><br><br>
 
-<img src="images/john_helveston_square.png" width=100%>
+## `r rmarkdown::metadata$title`
 
-]]
+### `r rmarkdown::metadata$subtitle`
 
-.rightcol70[
+<br><br><br><br>
 
-### John Helveston, Ph.D.
+**.white[John Paul Helveston]**, George Washington University
 
-.font80[
-
-Associate Professor, Engineering Management & Systems Engineering
-
-- 2016-2018 Postdoc at [Institute for Sustainable Energy](https://www.bu.edu/ise/), Boston University
-- 2016 PhD in Engineering & Public Policy at Carnegie Mellon University
-- 2015 MS in Engineering & Public Policy at Carnegie Mellon University
-- 2010 BS in Engineering Science & Mechanics at Virginia Tech
-- Website: [www.jhelvy.com](http://www.jhelvy.com/)
-
-]]
+`r rmarkdown::metadata$date`
 
 ---
 
-class: center
-
-# Meet the dev team!
-
-.cols3[.circle[
-
-<center>
-<img src="images/john_helveston_square.png" width=90%>
-<br>
-<b>John Paul Helveston</b>
-</center>
-
-]]
-
-.cols3[.circle[
-
-<center>
-<img src="images/pingfan_hu.jpg" width=90%>
-<br>
-<b>Pingfan Hu</b>
-</center>
-
-]]
-
-.cols3[.circle[
-
-<center>
-<img src="images/bogdan_bunea.jpg" width=90%>
-<br>
-<b>Bogdan Bunea</b>
-</center>
-
-]]
+background-image: url("images/ds1.png")
+background-size: cover
 
 ---
 
-# Before we start...
-
-<br>
-
-## 1. Be sure to [install everything](https://jhelvy.github.io/2025-surveydown-workshop/install.html)
-
-## 2. Download the [examples](https://jhelvy.github.io/2025-surveydown-workshop/examples.zip)
-
----
-
-```{r child="topics/0.Rmd"}
-```
-
----
-
-```{r child="topics/1.Rmd"}
-```
+background-image: url("images/ds2.png")
+background-size: cover
 
 ---
 
@@ -147,11 +139,6 @@ class: center
 <center>
 <img src="images/technologies.svg" width=90%>
 </center>
-
----
-
-```{r child="topics/2.Rmd"}
-```
 
 ---
 
@@ -497,58 +484,6 @@ Make standard UI
 
 ---
 
-```{r child="topics/3.Rmd"}
-```
-
----
-
-class: inverse
-
-```{r, echo=FALSE}
-countdown(
-  minutes   = 5,
-  top       = 0,
-  right     = 0,
-  font_size = '2em'
-)
-```
-
-# Your turn - start with a [template](https://surveydown.org/templates)
-
-**Step 1:** In R console, run:
-
-```{r}
-#| eval: false
-
-surveydown::sd_create_survey()
-```
-
-*Optional*: Specify a `path` and / or a `template`:
-
-```{r}
-#| eval: false
-
-surveydown::sd_create_survey(
-  template = "question_types",
-  path     = "path/to/folder"
-)
-```
-
-**Step 2:** In your IDE, open the `app.R` file, click "Run App", or in R console run:
-
-```{r}
-#| eval: false
-
-shiny::runApp('app.R')
-```
-
----
-
-```{r child="topics/4.Rmd"}
-```
-
----
-
 ## YAML Header
 
 The YAML header is at the top of the `.qmd` file:
@@ -752,22 +687,29 @@ class: center, middle
 
 ---
 
-class: inverse
+class: inverse 
+background-image: url("images/blue.jpg")
+background-size: cover
 
-```{r, echo=FALSE}
-countdown(
-  minutes   = 10,
-  top       = 0,
-  right     = 0,
-  font_size = '2em'
-)
-```
+<br>
 
-## Your turn
+# Thanks!
 
-- Open and edit the `survey.qmd` file that you previously made.
-- Pick a topic for your survey (a food, an animal, a sports team...whatever).
-- Draft a survey about that topic. Include the following:
-    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
-    - Pages 2 to N: Add different questions about the topic using several different question types.
-- Try out different themes to change the look and feel. 
+<br>
+
+### <span class="white-text">https://jhelvy.github.io/2025-posit-conf-surveydown</span>
+
+<style>
+.white-text a {
+  color: white !important;
+}
+</style>
+
+.footer-large[.white[.right[
+
+@jhelvy.bsky.social `r fa(name = "bluesky", fill = "white")`<br>
+@jhelvy `r fa(name = "github", fill = "white")`<br>
+jhelvy.com `r fa(name = "link", fill = "white")`<br>
+jph@gwu.edu `r fa(name = "paper-plane", fill = "white")`
+
+]]]
