@@ -1,5 +1,5 @@
 ---
-title: "Introducing {surveydown}:"
+title: "Introducing {surveydown}"
 subtitle: "An open-source platform for programmable, markdown-based surveys"
 date: "posit::conf(2025)"
 author: "John Paul Helveston"
@@ -67,8 +67,6 @@ meta() %>%
   )
 ```
 
----
-
 background-image: url("images/blue.jpg")
 background-size: cover
 class: inverse
@@ -87,46 +85,89 @@ class: inverse
 
 ---
 
-background-image: url("images/ds1.png")
+background-image: url("images/images/Slide1.png")
 background-size: cover
 
 ---
 
-background-image: url("images/ds2.png")
+background-image: url("images/images/Slide2.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide3.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide4.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide5.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide6.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide7.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide8.png")
+background-size: cover
+
+---
+
+background-image: url("images/images/Slide9.png")
 background-size: cover
 
 ---
 
 background-color: #fff
-class: center
-
-# Typical experience making a survey
+class: center, middle
 
 <center>
-<img src="images/google-form.gif" width=600>
+<img src="images/google-form.gif" width=700>
 </center>
 
 ---
 
-background-color: #fff
-class: middle
+class: center, middle, inverse
 
-.leftcol60[
+# Wouldn't it be nice if there was a<br>"Quarto" for surveys?
+
+--
 
 <center>
-<img src="images/google-form.gif" width=600>
+<img src="images/logo.png" width=300>
 </center>
+
+---
+
+class: middle 
+
+.leftcol40[
+
+# In this talk,<br>you'll learn:
 
 ]
 
-.rightcol40[
+.rightcol60[
 
-### ❌ Reproducible
-### ❌ Data Control
-### ⚠️ Free to Use
-### ⚠️ Open Source
-### ⚠️ Easy Collaboration
-### ⚠️ Feature Packed
+## - What is `surveydown`?
+
+## - How does it work?
+
+## - What can I do with it?
+
+## - What's next?
 
 ]
 
@@ -134,7 +175,7 @@ class: middle
 
 class: center
 
-## Introducing `surveydown`
+## What is `surveydown`
 
 <center>
 <img src="images/technologies.svg" width=90%>
