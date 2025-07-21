@@ -492,13 +492,48 @@ class: center
 
 ]
 
-.rightcol45[
+.rightcol55[
 
 ### `app.R` 
 
 .font120[An **R script** defining the<br>survey Shiny app.]
 
 ]
+
+---
+
+# .center[A complete `surveydown` survey]
+
+.leftcol45[.center[
+
+### `survey.qmd` 
+
+.font120[A **Quarto doc** defining the survey content (pages, text, images, questions, etc).]
+
+]]
+
+.rightcol55[
+
+.center[### `app.R` 
+
+.font120[An **R script** defining the<br>survey Shiny app.]]
+
+.code80[
+```{r}
+#| eval: false
+
+library(surveydown)
+
+ui <- sd_ui()
+
+server <- function(input, output, session) {
+  sd_server()
+}
+
+shiny::shinyApp(ui = ui, server = server)
+```
+
+]]
 
 ---
 
@@ -511,309 +546,63 @@ Typical `app.R` file
 
 library(surveydown)
 
-ui <- sd_ui()
+ui <- sd_ui() 
 
-server <- function(input, output, session) {
+server <- function(input, output, session) { 
   
   sd_server()
-  
-}
+   
+} 
 
 shiny::shinyApp(ui = ui, server = server)
 ```
 
 ]]
 
-.rightcol45[
-<br><br>
-Load `surveydown` package
-
-Render the `survey.qmd` file 
-
-]
-
-
-
-
-
-
-
-
-
-
-
 ---
 
-.leftcol[.code70[
+.leftcol65[.code90[
+
+Typical `app.R` file
 
 ```{r}
 #| eval: false
 
 library(surveydown)
 
-# Connects to database
-db <- sd_db_connect()
-
-# Main UI
-ui <- sd_ui()
-
-server <- function(input, output, session) {
-
-  # Main server
-  sd_server(db)
-  
-}
-
-shiny::shinyApp(
-  ui = ui, 
-  server = server
-)
-```
-
-]]
-
-.rightcol[
-
-# .center[app.R]
-
-]
-
----
-
-.leftcol[.code70[
-
-```{r}
-#| eval: false
-
-library(surveydown) #<<
-
-# Connects to database
-db <- sd_db_connect() #<<
-
-# Main UI
 ui <- sd_ui() #<<
 
-server <- function(input, output, session) {
+server <- function(input, output, session) { 
   
-  # Main server
-  sd_server(db) #<<
+  sd_server() #<<
+   
+} 
 
-}
-
-shiny::shinyApp(
-  ui = ui,
-  server = server
-)
+shiny::shinyApp(ui = ui, server = server)
 ```
 
 ]]
 
-.rightcol[
+.rightcol35[
 
-Load package
+<br><br><br>
 
-Connect to database
+Render the `survey.qmd` file
 
-Make standard UI 
+<br>
 
-<br>Run surveydown server
-
-]
-
----
-
-## YAML Header
-
-The YAML header is at the top of the `.qmd` file:
-
-``` yaml
----
-format: html
-echo: false
-warning: false
----
-```
-
----
-
-## Change the survey theme 
-
-Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
-
-```{markdown}
----
-format: html
-echo: false
-warning: false
-theme: united #<<
----
-```
-
-Make a custom theme with a `custom.scss` file
-
-```{markdown}
----
-format: html
-echo: false
-warning: false
-theme: [united, custom.scss] #<<
----
-```
-
----
-
-## Progress bar
-
-You can modify the survey progress bar with the `barcolor` and `barposition` keys:
-
-.leftcol[
-
-Change to any color with `barcolor`:
-
-```{markdown}
----
-format: html
-echo: false
-warning: false
-barcolor: #768692 #<<
----
-```
-
-]
-
-.rightcol[
-
-Change position: `top`, `bottom`, or `none`
-
-```{markdown}
----
-format: html
-echo: false
-warning: false
-barposition: bottom #<<
----
-```
+Run the surveydown server
 
 ]
 
 ---
 
-# Inserting pages
 
-Insert new pages with `:::` symbols, like this
 
-```{r}
-#| eval: false
 
-::: {.sd_page id=page_id}
 
-Page content here
 
-:::
-```
 
---
-
-Insert next buttons with the `sd_next()` function, like this (blank goes to next page):
-
-````markdown
-`r ''````{r}
-sd_next('next_page_id')
-```
-````
-
----
-
-# Inserting questions
-
-Insert questions using the `sd_question()` function, like this:
-
-.leftcol[
-
-**Code**
-
-```{r}
-#| eval: false
-
-sd_question(
-  type   = 'mc',
-  id     = 'fruit',
-  label  = "1. Do you like fruit?",
-  option = c(
-    'Yes!'    = 'yes',
-    'Kind of' = 'kind_of',
-    'No :('   = 'no'
-  )
-)
-```
-
-Format is `"Label = value"`
-
-]
-
-.rightcol[
-
-**Output**
-
-```{r}
-#| echo: false
-
-sd_question(
-  type   = 'mc',
-  id     = 'fruit',
-  label  = "1. Do you like fruit?",
-  option = c(
-    'Yes!'    = 'yes',
-    'Kind of' = 'kind_of',
-    'No :('   = 'no'
-  )
-)
-```
-
-]
-
----
-
-## surveydown supports lots of [question types](https://surveydown.org/docs/question-types)
-
-Some common types you may want to use:
-
-Type | Description
------|---------------------
-`mc` | Multiple choice question (single choice) 
-`mc_multiple` | Multiple choice question (multiple choices) 
-`mc_buttons` | Multiple choice question (large buttons)
-`select` | Drop down menu (choose one)
-`text` | Open text, single row
-`textarea` | Open text, block
-
----
-
-# Embed images with html
-
-I recommend just writing html code, like this
-
-```{html, eval=FALSE}
-<center>
-<img src="https://surveydown.org/images/logo.png" width=250>
-</center>
-```
-
-<center>
-<img src="https://surveydown.org/images/logo.png" width=250>
-</center>
-
----
-
-# Embed images with markdown
-
-```{html, eval=FALSE}
-![](https://surveydown.org/images/logo.png){fig-align="center" width="250"}
-```
-
-<center>
-<img src="https://surveydown.org/images/logo.png" width=250>
-</center>
 
 ---
 

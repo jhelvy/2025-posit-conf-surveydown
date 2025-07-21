@@ -470,13 +470,47 @@ class: center
 
 ]
 
-.rightcol45[
+.rightcol55[
 
 ### `app.R` 
 
 .font120[An **R script** defining the&lt;br&gt;survey Shiny app.]
 
 ]
+
+---
+
+# .center[A complete `surveydown` survey]
+
+.leftcol45[.center[
+
+### `survey.qmd` 
+
+.font120[A **Quarto doc** defining the survey content (pages, text, images, questions, etc).]
+
+]]
+
+.rightcol55[
+
+.center[### `app.R` 
+
+.font120[An **R script** defining the&lt;br&gt;survey Shiny app.]]
+
+.code80[
+
+``` r
+library(surveydown)
+
+ui &lt;- sd_ui()
+
+server &lt;- function(input, output, session) {
+  sd_server()
+}
+
+shiny::shinyApp(ui = ui, server = server)
+```
+
+]]
 
 ---
 
@@ -488,326 +522,62 @@ Typical `app.R` file
 ``` r
 library(surveydown)
 
-ui &lt;- sd_ui()
+ui &lt;- sd_ui() 
 
-server &lt;- function(input, output, session) {
+server &lt;- function(input, output, session) { 
   
   sd_server()
-  
-}
+   
+} 
 
 shiny::shinyApp(ui = ui, server = server)
 ```
 
 ]]
 
-.rightcol45[
-&lt;br&gt;&lt;br&gt;
-Load `surveydown` package
-
-Render the `survey.qmd` file 
-
-]
-
-
-
-
-
-
-
-
-
-
-
 ---
 
-.leftcol[.code70[
+.leftcol65[.code90[
+
+Typical `app.R` file
 
 
 ``` r
 library(surveydown)
 
-# Connects to database
-db &lt;- sd_db_connect()
-
-# Main UI
-ui &lt;- sd_ui()
-
-server &lt;- function(input, output, session) {
-
-  # Main server
-  sd_server(db)
-  
-}
-
-shiny::shinyApp(
-  ui = ui, 
-  server = server
-)
-```
-
-]]
-
-.rightcol[
-
-# .center[app.R]
-
-]
-
----
-
-.leftcol[.code70[
-
-
-``` r
-*library(surveydown)
-
-# Connects to database
-*db &lt;- sd_db_connect()
-
-# Main UI
 *ui &lt;- sd_ui()
 
-server &lt;- function(input, output, session) {
+server &lt;- function(input, output, session) { 
   
-  # Main server
-* sd_server(db)
+* sd_server()
+   
+} 
 
-}
-
-shiny::shinyApp(
-  ui = ui,
-  server = server
-)
+shiny::shinyApp(ui = ui, server = server)
 ```
 
 ]]
 
-.rightcol[
+.rightcol35[
 
-Load package
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-Connect to database
+Render the `survey.qmd` file
 
-Make standard UI 
+&lt;br&gt;
 
-&lt;br&gt;Run surveydown server
-
-]
-
----
-
-## YAML Header
-
-The YAML header is at the top of the `.qmd` file:
-
-``` yaml
----
-format: html
-echo: false
-warning: false
----
-```
-
----
-
-## Change the survey theme 
-
-Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
-
-
-``` markdown
----
-format: html
-echo: false
-warning: false
-*theme: united
----
-```
-
-Make a custom theme with a `custom.scss` file
-
-
-``` markdown
----
-format: html
-echo: false
-warning: false
-*theme: [united, custom.scss]
----
-```
-
----
-
-## Progress bar
-
-You can modify the survey progress bar with the `barcolor` and `barposition` keys:
-
-.leftcol[
-
-Change to any color with `barcolor`:
-
-
-``` markdown
----
-format: html
-echo: false
-warning: false
-*barcolor: #768692
----
-```
-
-]
-
-.rightcol[
-
-Change position: `top`, `bottom`, or `none`
-
-
-``` markdown
----
-format: html
-echo: false
-warning: false
-*barposition: bottom
----
-```
+Run the surveydown server
 
 ]
 
 ---
 
-# Inserting pages
-
-Insert new pages with `:::` symbols, like this
 
 
-``` r
-::: {.sd_page id=page_id}
-
-Page content here
-
-:::
-```
-
---
-
-Insert next buttons with the `sd_next()` function, like this (blank goes to next page):
-
-````markdown
-```{r}
-sd_next('next_page_id')
-```
-````
-
----
-
-# Inserting questions
-
-Insert questions using the `sd_question()` function, like this:
-
-.leftcol[
-
-**Code**
 
 
-``` r
-sd_question(
-  type   = 'mc',
-  id     = 'fruit',
-  label  = "1. Do you like fruit?",
-  option = c(
-    'Yes!'    = 'yes',
-    'Kind of' = 'kind_of',
-    'No :('   = 'no'
-  )
-)
-```
-
-Format is `"Label = value"`
-
-]
-
-.rightcol[
-
-**Output**
-
-<div id="container-fruit" data-question-id="fruit" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;fruit_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;fruit_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="fruit" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="fruit-label">
-<label class="control-label" id="fruit-label" for="fruit"><ol>
-<li>Do you like fruit?</li>
-</ol>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="fruit" value="yes"/>
-<span>Yes!</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="fruit" value="kind_of"/>
-<span>Kind of</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="fruit" value="no"/>
-<span>No :(</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-
-]
-
----
-
-## surveydown supports lots of [question types](https://surveydown.org/docs/question-types)
-
-Some common types you may want to use:
-
-Type | Description
------|---------------------
-`mc` | Multiple choice question (single choice) 
-`mc_multiple` | Multiple choice question (multiple choices) 
-`mc_buttons` | Multiple choice question (large buttons)
-`select` | Drop down menu (choose one)
-`text` | Open text, single row
-`textarea` | Open text, block
-
----
-
-# Embed images with html
-
-I recommend just writing html code, like this
 
 
-``` html
-&lt;center&gt;
-&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
-&lt;/center&gt;
-```
-
-&lt;center&gt;
-&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
-&lt;/center&gt;
-
----
-
-# Embed images with markdown
-
-
-``` html
-![](https://surveydown.org/images/logo.png){fig-align="center" width="250"}
-```
-
-&lt;center&gt;
-&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
-&lt;/center&gt;
 
 ---
 
