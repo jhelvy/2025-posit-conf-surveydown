@@ -56,6 +56,14 @@ posit::conf(2025)
 
 ---
 
+class: center, middle
+
+&lt;center&gt;
+&lt;img src="images/survey.gif" width=80%&gt;
+&lt;/center&gt;
+
+---
+
 background-image: url("images/images/Slide1.png")
 background-size: cover
 
@@ -93,20 +101,6 @@ background-size: cover
 
 background-image: url("images/images/Slide8.png")
 background-size: cover
-
----
-
-background-image: url("images/images/Slide9.png")
-background-size: cover
-
----
-
-background-color: #fff
-class: center, middle
-
-&lt;center&gt;
-&lt;img src="images/google-form.gif" width=700&gt;
-&lt;/center&gt;
 
 ---
 
@@ -421,21 +415,30 @@ sd_next()
 
 class: middle, inverse
 
-# .center[Problem:&lt;br&gt;Quarto renders to _static_ html page]
+# .center[Wait a minute...&lt;br&gt;Quarto renders to _static_ html pages, right?]
 
---
+&lt;center&gt;
+&lt;img src="images/batman-think.gif" width=40%&gt;
+&lt;/center&gt;
+
+---
+
+class: middle, inverse
+
+# .center[Wait a minute...&lt;br&gt;Quarto renders to _static_ html pages, right?]
 
 .leftcol[
 
 &lt;center&gt;
-&lt;img src="images/logo_shiny.png" width=300&gt;
+&lt;img src="images/logo_shiny.png" width=60%&gt;
 &lt;/center&gt;
 
 ]
 
 .rightcol[
-&lt;br&gt;&lt;br&gt;
-# .left[To the rescue!]
+&lt;center&gt;
+&lt;img src="images/thumbs-up.gif" width=70%&gt;
+&lt;/center&gt;
 
 ]
 
@@ -477,40 +480,6 @@ class: center
 .font120[An **R script** defining the&lt;br&gt;survey Shiny app.]
 
 ]
-
----
-
-# .center[A complete `surveydown` survey]
-
-.leftcol45[.center[
-
-### `survey.qmd` 
-
-.font120[A **Quarto doc** defining the survey content (pages, text, images, questions, etc).]
-
-]]
-
-.rightcol55[
-
-.center[### `app.R` 
-
-.font120[An **R script** defining the&lt;br&gt;survey Shiny app.]]
-
-.code80[
-
-``` r
-library(surveydown)
-
-ui &lt;- sd_ui()
-
-server &lt;- function(input, output, session) {
-  sd_server()
-}
-
-shiny::shinyApp(ui = ui, server = server)
-```
-
-]]
 
 ---
 
