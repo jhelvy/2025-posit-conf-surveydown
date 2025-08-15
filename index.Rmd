@@ -198,7 +198,7 @@ library(surveydown)
 sd_question(
   type  = "text",
   id    = "name",
-  label = "What's your name?"
+  label = "Who's your favorite super hero?"
 )
 
 sd_next()
@@ -565,12 +565,81 @@ Run the surveydown server
 
 ---
 
+class: middle, inverse, center
 
+# What can `surveydown` do?
 
+---
 
+## .center[Surveydown supports most common survey features]
 
+<br><br>
 
+.leftcol25[]
 
+.rightcol75[
+
+## - Lots of question types
+
+## - Conditionally display content
+
+## - Conditionally skip forward
+
+]
+
+---
+
+# .center[Question types: `text`]
+
+.leftcol[
+
+```{r}
+#| eval: false
+
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "Who's your favorite super hero?"
+)
+```
+
+]
+
+.rightcol[
+
+```{r}
+#| echo: false
+
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "Who's your favorite super hero?"
+)
+```
+
+]
+
+---
+
+# Conditionally display content
+
+# Conditionally skip forward
+
+---
+
+class: center, middle, inverse
+
+# If it works in Shiny, it works in surveydown
+
+---
+
+Cool map example
+
+---
+
+class: center, middle, inverse
+
+# What's next?
 
 ---
 
@@ -579,6 +648,12 @@ class: center, middle
 # Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
 
 ## `sdApps::sd_studio()`
+
+---
+
+class: middle, center 
+
+# You can help!
 
 ---
 

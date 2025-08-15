@@ -171,7 +171,7 @@ library(surveydown)
 sd_question(
   type  = "text",
   id    = "name",
-  label = "What's your name?"
+  label = "Who's your favorite super hero?"
 )
 
 sd_next()
@@ -541,12 +541,79 @@ Run the surveydown server
 
 ---
 
+class: middle, inverse, center
+
+# What can `surveydown` do?
+
+---
+
+## .center[Surveydown supports most common survey features]
+
+&lt;br&gt;&lt;br&gt;
+
+.leftcol25[]
+
+.rightcol75[
+
+## - Lots of question types
+
+## - Conditionally display content
+
+## - Conditionally skip forward
+
+]
+
+---
+
+# .center[Question types: `text`]
+
+.leftcol[
 
 
+``` r
+sd_question(
+  type  = "text",
+  id    = "name",
+  label = "Who's your favorite super hero?"
+)
+```
 
+]
 
+.rightcol[
 
+<div id="container-name" data-question-id="name" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;name_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;name_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="name-label" for="name"><p>Who’s your favorite super hero?</p>
+</label>
+<input id="name" type="text" class="shiny-input-text form-control" value=""/>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
 
+]
+
+---
+
+# Conditionally display content
+
+# Conditionally skip forward
+
+---
+
+class: center, middle, inverse
+
+# If it works in Shiny, it works in surveydown
+
+---
+
+Cool map example
+
+---
+
+class: center, middle, inverse
+
+# What's next?
 
 ---
 
@@ -555,6 +622,12 @@ class: center, middle
 # Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
 
 ## `sdApps::sd_studio()`
+
+---
+
+class: middle, center 
+
+# You can help!
 
 ---
 
