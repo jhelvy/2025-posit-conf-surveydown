@@ -1,0 +1,147 @@
+/*-- scss:defaults --*/
+
+// Force dark text on light background to fix superhero theme contrast
+$body-color: #333333;
+$text-color: #333333;
+
+/*-- scss:rules --*/
+
+// Force all text to be dark for visibility on light background
+body {
+  color: #333333 !important;
+}
+
+// Fix question labels and text to be dark
+.sd-question-label {
+  color: #333333 !important;
+  font-weight: 500;
+}
+
+// Fix radio button and checkbox labels
+.form-check-label {
+  color: #333333 !important;
+}
+
+// Fix input fields to have dark text
+.form-control {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border-color: #cccccc !important;
+}
+
+.form-control:focus {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25) !important;
+}
+
+// Fix select dropdowns
+.form-select {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border-color: #cccccc !important;
+}
+
+.form-select:focus {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border-color: #e74c3c !important;
+}
+
+// Fix textarea
+textarea.form-control {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+}
+
+// Fix all heading text
+h1, h2, h3, h4, h5, h6 {
+  color: #333333 !important;
+}
+
+// Fix paragraph and other text elements
+p, span, div, label {
+  color: #333333 !important;
+}
+
+// Fix any muted text
+.text-muted {
+  color: #666666 !important;
+}
+
+// Fix matrix table headers and cells
+.table th,
+.table td {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+}
+
+// Fix any completion code or output text
+.sd-output {
+  color: #333333 !important;
+  font-weight: bold;
+}
+
+// Make sure strong/bold text is dark
+strong, b {
+  color: #333333 !important;
+}
+
+// Fix button text contrast if needed
+.btn {
+  font-weight: 500;
+}
+
+.btn-outline-secondary {
+  color: #333333 !important;
+  border-color: #333333 !important;
+}
+
+// Fix any remaining light text that might be hiding
+* {
+  color: inherit !important;
+}
+
+// Override any theme-specific light text
+.text-light,
+.text-white {
+  color: #333333 !important;
+}
+
+// Fix modal dialogs
+.modal-content {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+.modal-header {
+  background-color: #ffffff !important;
+  border-bottom-color: #cccccc !important;
+}
+
+.modal-title {
+  color: #333333 !important;
+}
+
+.modal-body {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+.modal-footer {
+  background-color: #ffffff !important;
+  border-top-color: #cccccc !important;
+}
+
+// Fix modal buttons
+.modal-footer .btn {
+  color: #333333 !important;
+  background-color: #ffffff !important;
+  border-color: #cccccc !important;
+}
+
+.modal-footer .btn:hover {
+  background-color: #f8f9fa !important;
+  border-color: #e74c3c !important;
+}

@@ -16,6 +16,9 @@
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
     <meta name="description" content="An open-source platform for programmable, markdown-based surveys"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="jhelvy/2025-posit-conf-surveydown"/>
@@ -59,7 +62,7 @@ posit::conf(2025)
 class: center, middle
 
 &lt;center&gt;
-&lt;img src="images/survey.gif" width=80%&gt;
+&lt;img src="images/demo.gif" width=70%&gt;
 &lt;/center&gt;
 
 ---
@@ -149,7 +152,7 @@ background-size: cover
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -169,9 +172,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "Who's your favorite super hero?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -182,7 +186,7 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 .center[`survey.qmd` --&gt; Rendered survey]
 
@@ -425,7 +429,7 @@ class: middle, inverse
 
 class: middle, inverse
 
-# .center[Wait a minute...&lt;br&gt;Quarto renders to _static_ html pages, right?]
+# .center[Shiny to the rescue!]
 
 .leftcol[
 
@@ -541,6 +545,98 @@ Run the surveydown server
 
 ---
 
+class: middle, inverse
+
+# .center[Wait a minute...&lt;br&gt;How do you store the response data?]
+
+&lt;center&gt;
+&lt;img src="images/batman-think.gif" width=40%&gt;
+&lt;/center&gt;
+
+---
+
+class: middle, inverse
+
+# .center[PostgreSQL to the rescue!]
+
+.leftcol[
+
+&lt;center&gt;
+&lt;img src="images/logo_postgres.png" width=60%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol[
+&lt;center&gt;
+&lt;img src="images/thumbs-up.gif" width=70%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+.leftcol65[.code90[
+
+Typical `app.R` file
+
+
+``` r
+library(surveydown)
+
+*# sd_db_config()
+*db &lt;- sd_db_connect()
+
+ui &lt;- sd_ui() 
+
+server &lt;- function(input, output, session) { 
+  
+* sd_server(db)
+   
+} 
+
+shiny::shinyApp(ui = ui, server = server)
+```
+
+]]
+
+.rightcol35[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Store credentials&lt;br&gt;
+Connect to the database
+
+&lt;br&gt;
+
+Pass connection to `sd_server()`
+
+]
+
+---
+
+class: center, middle
+
+.leftcol20[
+
+### supabase.com
+
+&lt;center&gt;
+&lt;img src="images/logo_supabase.png" width=80%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol80[
+
+&lt;center&gt;
+&lt;img src="images/supabase-table.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
 class: middle, inverse, center
 
 # What can `surveydown` do?
@@ -597,6 +693,12 @@ sd_question(
 
 # Conditionally display content
 
+
+
+
+---
+
+
 # Conditionally skip forward
 
 ---
@@ -607,7 +709,24 @@ class: center, middle, inverse
 
 ---
 
-Cool map example
+.leftcol40[
+
+# Embed interactive map using {leaflet}
+
+]
+
+.rightcol60[
+
+&lt;center&gt;
+&lt;iframe src="images/map.mp4" width="762" height="610" frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+Generate surveys using LLMs
 
 ---
 
@@ -622,6 +741,10 @@ class: center, middle
 # Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
 
 ## `sdApps::sd_studio()`
+
+---
+
+Check out the paper
 
 ---
 

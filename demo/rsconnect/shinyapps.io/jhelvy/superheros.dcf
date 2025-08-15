@@ -1,0 +1,12 @@
+name: superheros
+title: superheros
+username: jhelvy
+account: jhelvy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15210871
+bundleId: 10776675
+url: https://jhelvy.shinyapps.io/superheros/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
