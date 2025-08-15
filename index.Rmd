@@ -10,6 +10,7 @@ output:
       - default
       - css/lexis.css
       - css/lexis-fonts.css
+      - css/surveydown.css
     lib_dir: libs
     seal: false
     nature:
@@ -49,7 +50,6 @@ xaringanExtra::style_share_again(share_buttons = "none")
 xaringanExtra::use_extra_styles(
   mute_unhighlighted_code = FALSE
 )
-xaringanExtra::use_freezeframe()
 
 # Set up website metadata
 meta() %>%
@@ -173,7 +173,7 @@ class: center, middle, inverse
 
 ---
 
-background-image: url("images/images/Slide10.png")
+background-image: url("images/images/Slide9.png")
 background-size: cover
 
 ---
@@ -216,14 +216,14 @@ sd_next()
 .center[`survey.qmd` --> Rendered survey]
 
 <center>
-<img src="images/survey-app.png" width=90%>
+<img src="images/survey-app.png" width=100%>
 </center>
 
 ]
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 ````{markdown}
 --- #<<
@@ -242,9 +242,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -255,7 +256,7 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 ### .center[Standard YAML header<br>w/options for "clean" output]
 
@@ -263,7 +264,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 ````{markdown}
 ---
@@ -282,9 +283,10 @@ library(surveydown) #<<
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -295,9 +297,9 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
-<br><br><br><br>
+<br><br><br>
 
 ### .center[Load the `surveydown` package]
 
@@ -305,7 +307,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 ````{markdown}
 ---
@@ -324,9 +326,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -337,7 +340,7 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 <br><br><br><br><br><br>
 
@@ -347,7 +350,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 ````{markdown}
 ---
@@ -366,9 +369,10 @@ library(surveydown)
    #<<
 ```{r} #<<
 sd_question( #<<
-  type  = "text", #<<
-  id    = "name", #<<
-  label = "What's your name?" #<<
+  type  = "mc", #<<
+  id    = "has_fav_hero", #<<
+  label = "Do you have a favorite super hero?",  #<<
+  option = c("Yes" = "yes", "No" = "no") #<<
 ) #<<
    #<<
 sd_next() #<<
@@ -379,7 +383,7 @@ sd_next() #<<
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 <br><br><br><br><br><br><br><br>
 
@@ -393,7 +397,7 @@ sd_next() #<<
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 ````{markdown}
 ---
@@ -412,9 +416,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -425,12 +430,12 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 .center[`survey.qmd` --> Rendered survey]
 
 <center>
-<img src="images/survey-app.png" width=90%>
+<img src="images/survey-app.png" width=100%>
 </center>
 
 ]
@@ -449,7 +454,7 @@ class: middle, inverse
 
 class: middle, inverse
 
-# .center[Shiny to the rescue!]
+# .font150[.center[Shiny to the rescue!]]
 
 .leftcol[
 
@@ -461,10 +466,15 @@ class: middle, inverse
 
 .rightcol[
 <center>
-<img src="images/thumbs-up.gif" width=70%>
+<img src="images/batman-thumbs-up.gif" width=70%>
 </center>
 
 ]
+
+---
+
+background-image: url("images/images/Slide10.png")
+background-size: cover
 
 ---
 
@@ -474,11 +484,6 @@ background-size: cover
 ---
 
 background-image: url("images/images/Slide12.png")
-background-size: cover
-
----
-
-background-image: url("images/images/Slide13.png")
 background-size: cover
 
 ---
@@ -572,14 +577,14 @@ class: middle, inverse
 # .center[Wait a minute...<br>How do you store the response data?]
 
 <center>
-<img src="images/batman-think.gif" width=40%>
+<img src="images/superman-think.gif" width=50%>
 </center>
 
 ---
 
 class: middle, inverse
 
-# .center[PostgreSQL to the rescue!]
+# .font150[.center[PostgreSQL to the rescue!]]
 
 .leftcol[
 
@@ -590,9 +595,8 @@ class: middle, inverse
 ]
 
 .rightcol[
-<center>
-<img src="images/thumbs-up.gif" width=70%>
-</center>
+
+<img src="images/superman-oh-yeah.gif" width=60%>
 
 ]
 
@@ -684,17 +688,22 @@ class: middle, inverse, center
 
 ---
 
+START!
+
+---
+
 # .center[Question types: `text`]
+
+<br>
 
 .leftcol[
 
 ```{r}
 #| eval: false
-
 sd_question(
   type  = "text",
-  id    = "name",
-  label = "Who's your favorite super hero?"
+  id    = "fav_hero_name",
+  label = "Who is your favorite super hero?"
 )
 ```
 
@@ -702,35 +711,250 @@ sd_question(
 
 .rightcol[
 
-```{r}
-#| echo: false
-
-sd_question(
-  type  = "text",
-  id    = "name",
-  label = "Who's your favorite super hero?"
-)
-```
+<center>
+<img src="images/question-text.png" width=100%>
+</center>
 
 ]
 
 ---
 
-# Conditionally display content
+# .center[Question types: `mc`]
 
+<br>
 
+.leftcol[
 
+```{r}
+#| eval: false
+sd_question(
+  type  = "mc",
+  id    = "hero_universe",
+  label = "Which superhero universe do you prefer?",
+  option = c(
+    "Marvel" = "marvel",
+    "DC Comics" = "dc",
+    "Independent/Other" = "other",
+    "I like them all equally" = "all"
+  )
+)
+```
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/question-mc.png" width=100%>
+</center>
+
+]
 
 ---
 
+# .center[Question types: `mc_multiple`]
 
-# Conditionally skip forward
+<br>
+
+.leftcol[
+
+```{r}
+#| eval: false
+sd_question(
+  type  = "mc_multiple",
+  id    = "hero_qualities",
+  label = "What qualities do you find most appealing? (Select all that apply)",
+  option = c(
+    "Super strength" = "strength",
+    "Ability to fly" = "flying",
+    "Intelligence/Strategy" = "intelligence",
+    "Humor/Wit" = "humor",
+    "Moral compass" = "morals"
+  )
+)
+```
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/question-mc-multiple.png" width=100%>
+</center>
+
+]
+
+---
+
+# .center[Question types: `mc_buttons`]
+
+<br>
+
+.leftcol[
+```{r}
+#| eval: false
+sd_question(
+  type  = "mc_buttons",
+  id    = "dream_power",
+  label = "If you could have ONE superpower?",
+  option = c(
+    "🕸️ Web-slinging" = "webslinging",
+    "🛡️ Super Strength" = "strength",
+    "✈️ Flight" = "flight",
+    "🧠 Telepathy" = "telepathy",
+    "⚡ Super Speed" = "speed"
+  ),
+  direction = "vertical"
+)
+```
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/question-mc-buttons.png" width=100%>
+</center>
+
+]
+
+---
+
+# .center[Question types: `slider_numeric`]
+
+<br>
+
+.leftcol[
+
+```{r}
+#| eval: false
+sd_question(
+  type  = "slider_numeric",
+  id    = "responsibility_scale",
+  label = "How much do you agree with 'With great power comes great responsibility'?",
+  option = 1:10
+)
+```
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/question-slider.png" width=100%>
+</center>
+
+]
+
+---
+
+class: center
+
+# Conditionally display content
+
+<center>
+<img src="images/conditional-display.gif" width=50%>
+</center>
+
+---
+
+# .center[Conditionally display content]
+
+.leftcol[
+
+survey.qmd
+
+```{r}
+#| eval: false
+
+sd_question(
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite hero?",
+  option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+  type  = "text",
+  id    = "fav_hero",
+  label = "Who is your favorite super hero?"
+)
+```
+
+app.R
+
+```{r}
+#| eval: false
+
+sd_show_if(
+  input$has_fav_hero == "yes" ~ "fav_hero"
+)
+```
+
+]
+
+.rightcol[
+
+<br>
+<center>
+<img src="images/conditional-display.gif" width=100%>
+</center>
+
+]
+
+---
+
+# .center[Conditionally skip forward]
+
+<center>
+<img src="images/screenout.gif" width=60%>
+</center>
+
+---
+
+# .center[Conditionally skip forward]
+
+.leftcol[
+
+survey.qmd
+
+```{r}
+#| eval: false
+
+sd_question(
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite hero?",
+  option = c("Yes" = "yes", "No" = "no")
+)
+```
+
+app.R
+
+```{r}
+#| eval: false
+
+sd_skip_forward(
+  input$has_fav_hero == "no" ~ "screenout"
+)
+```
+
+]
+
+.rightcol[
+
+<br>
+<center>
+<img src="images/screenout.gif" width=100%>
+</center>
+
+] 
 
 ---
 
 class: center, middle, inverse
 
-# If it works in Shiny, it works in surveydown
+# If it works in Shiny,<br>it works in surveydown
 
 ---
 
@@ -751,7 +975,13 @@ class: center, middle, inverse
 
 ---
 
-Generate surveys using LLMs
+class: center
+
+## Generate surveys with LLMs!
+
+<center>
+<img src="images/llm.gif" width=80%>
+</center>
 
 ---
 

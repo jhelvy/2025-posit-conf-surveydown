@@ -16,9 +16,6 @@
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script src="libs/freezeframe/freezeframe.min.js"></script>
-    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
-    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
     <meta name="description" content="An open-source platform for programmable, markdown-based surveys"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="jhelvy/2025-posit-conf-surveydown"/>
@@ -34,6 +31,7 @@
     <meta property="article:author" content="John Paul Helveston"/>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/surveydown.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -147,7 +145,7 @@ class: center, middle, inverse
 
 ---
 
-background-image: url("images/images/Slide10.png")
+background-image: url("images/images/Slide9.png")
 background-size: cover
 
 ---
@@ -191,14 +189,14 @@ sd_next()
 .center[`survey.qmd` --&gt; Rendered survey]
 
 &lt;center&gt;
-&lt;img src="images/survey-app.png" width=90%&gt;
+&lt;img src="images/survey-app.png" width=100%&gt;
 &lt;/center&gt;
 
 ]
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -218,9 +216,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -231,7 +230,7 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 ### .center[Standard YAML header&lt;br&gt;w/options for "clean" output]
 
@@ -239,7 +238,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -259,9 +258,10 @@ warning: false
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -272,9 +272,9 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ### .center[Load the `surveydown` package]
 
@@ -282,7 +282,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -302,9 +302,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -315,7 +316,7 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
@@ -325,7 +326,7 @@ sd_next()
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -345,9 +346,10 @@ library(surveydown)
 *  
 *```{r}
 *sd_question(
-* type  = "text",
-* id    = "name",
-* label = "What's your name?"
+* type  = "mc",
+* id    = "has_fav_hero",
+* label = "Do you have a favorite super hero?",
+* option = c("Yes" = "yes", "No" = "no")
 *) 
 *  
 *sd_next()
@@ -358,7 +360,7 @@ library(surveydown)
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
@@ -372,7 +374,7 @@ library(surveydown)
 
 ---
 
-.leftcol40[.code80[
+.leftcol[.code75[
 
 
 ```` markdown
@@ -392,9 +394,10 @@ library(surveydown)
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "name",
-  label = "What's your name?"
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?", 
+  option = c("Yes" = "yes", "No" = "no")
 )
 
 sd_next()
@@ -405,12 +408,12 @@ sd_next()
 
 ]]
 
-.rightcol60[
+.rightcol[
 
 .center[`survey.qmd` --&gt; Rendered survey]
 
 &lt;center&gt;
-&lt;img src="images/survey-app.png" width=90%&gt;
+&lt;img src="images/survey-app.png" width=100%&gt;
 &lt;/center&gt;
 
 ]
@@ -429,7 +432,7 @@ class: middle, inverse
 
 class: middle, inverse
 
-# .center[Shiny to the rescue!]
+# .font150[.center[Shiny to the rescue!]]
 
 .leftcol[
 
@@ -441,10 +444,15 @@ class: middle, inverse
 
 .rightcol[
 &lt;center&gt;
-&lt;img src="images/thumbs-up.gif" width=70%&gt;
+&lt;img src="images/batman-thumbs-up.gif" width=70%&gt;
 &lt;/center&gt;
 
 ]
+
+---
+
+background-image: url("images/images/Slide10.png")
+background-size: cover
 
 ---
 
@@ -454,11 +462,6 @@ background-size: cover
 ---
 
 background-image: url("images/images/Slide12.png")
-background-size: cover
-
----
-
-background-image: url("images/images/Slide13.png")
 background-size: cover
 
 ---
@@ -550,14 +553,14 @@ class: middle, inverse
 # .center[Wait a minute...&lt;br&gt;How do you store the response data?]
 
 &lt;center&gt;
-&lt;img src="images/batman-think.gif" width=40%&gt;
+&lt;img src="images/superman-think.gif" width=50%&gt;
 &lt;/center&gt;
 
 ---
 
 class: middle, inverse
 
-# .center[PostgreSQL to the rescue!]
+# .font150[.center[PostgreSQL to the rescue!]]
 
 .leftcol[
 
@@ -568,9 +571,8 @@ class: middle, inverse
 ]
 
 .rightcol[
-&lt;center&gt;
-&lt;img src="images/thumbs-up.gif" width=70%&gt;
-&lt;/center&gt;
+
+&lt;img src="images/superman-oh-yeah.gif" width=60%&gt;
 
 ]
 
@@ -661,7 +663,13 @@ class: middle, inverse, center
 
 ---
 
+START!
+
+---
+
 # .center[Question types: `text`]
+
+&lt;br&gt;
 
 .leftcol[
 
@@ -669,8 +677,8 @@ class: middle, inverse, center
 ``` r
 sd_question(
   type  = "text",
-  id    = "name",
-  label = "Who's your favorite super hero?"
+  id    = "fav_hero_name",
+  label = "Who is your favorite super hero?"
 )
 ```
 
@@ -678,34 +686,246 @@ sd_question(
 
 .rightcol[
 
-<div id="container-name" data-question-id="name" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;name_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;name_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="name-label" for="name"><p>Who’s your favorite super hero?</p>
-</label>
-<input id="name" type="text" class="shiny-input-text form-control" value=""/>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
+&lt;center&gt;
+&lt;img src="images/question-text.png" width=100%&gt;
+&lt;/center&gt;
 
 ]
 
 ---
 
-# Conditionally display content
+# .center[Question types: `mc`]
+
+&lt;br&gt;
+
+.leftcol[
 
 
+``` r
+sd_question(
+  type  = "mc",
+  id    = "hero_universe",
+  label = "Which superhero universe do you prefer?",
+  option = c(
+    "Marvel" = "marvel",
+    "DC Comics" = "dc",
+    "Independent/Other" = "other",
+    "I like them all equally" = "all"
+  )
+)
+```
 
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/question-mc.png" width=100%&gt;
+&lt;/center&gt;
+
+]
 
 ---
 
+# .center[Question types: `mc_multiple`]
 
-# Conditionally skip forward
+&lt;br&gt;
+
+.leftcol[
+
+
+``` r
+sd_question(
+  type  = "mc_multiple",
+  id    = "hero_qualities",
+  label = "What qualities do you find most appealing? (Select all that apply)",
+  option = c(
+    "Super strength" = "strength",
+    "Ability to fly" = "flying",
+    "Intelligence/Strategy" = "intelligence",
+    "Humor/Wit" = "humor",
+    "Moral compass" = "morals"
+  )
+)
+```
+
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/question-mc-multiple.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# .center[Question types: `mc_buttons`]
+
+&lt;br&gt;
+
+.leftcol[
+
+``` r
+sd_question(
+  type  = "mc_buttons",
+  id    = "dream_power",
+  label = "If you could have ONE superpower?",
+  option = c(
+    "🕸️ Web-slinging" = "webslinging",
+    "🛡️ Super Strength" = "strength",
+    "✈️ Flight" = "flight",
+    "🧠 Telepathy" = "telepathy",
+    "⚡ Super Speed" = "speed"
+  ),
+  direction = "vertical"
+)
+```
+
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/question-mc-buttons.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# .center[Question types: `slider_numeric`]
+
+&lt;br&gt;
+
+.leftcol[
+
+
+``` r
+sd_question(
+  type  = "slider_numeric",
+  id    = "responsibility_scale",
+  label = "How much do you agree with 'With great power comes great responsibility'?",
+  option = 1:10
+)
+```
+
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/question-slider.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+class: center
+
+# Conditionally display content
+
+&lt;center&gt;
+&lt;img src="images/conditional-display.gif" width=50%&gt;
+&lt;/center&gt;
+
+---
+
+# .center[Conditionally display content]
+
+.leftcol[
+
+survey.qmd
+
+
+``` r
+sd_question(
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite hero?",
+  option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+  type  = "text",
+  id    = "fav_hero",
+  label = "Who is your favorite super hero?"
+)
+```
+
+app.R
+
+
+``` r
+sd_show_if(
+  input$has_fav_hero == "yes" ~ "fav_hero"
+)
+```
+
+]
+
+.rightcol[
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;img src="images/conditional-display.gif" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# .center[Conditionally skip forward]
+
+&lt;center&gt;
+&lt;img src="images/screenout.gif" width=60%&gt;
+&lt;/center&gt;
+
+---
+
+# .center[Conditionally skip forward]
+
+.leftcol[
+
+survey.qmd
+
+
+``` r
+sd_question(
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite hero?",
+  option = c("Yes" = "yes", "No" = "no")
+)
+```
+
+app.R
+
+
+``` r
+sd_skip_forward(
+  input$has_fav_hero == "no" ~ "screenout"
+)
+```
+
+]
+
+.rightcol[
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;img src="images/screenout.gif" width=100%&gt;
+&lt;/center&gt;
+
+] 
 
 ---
 
 class: center, middle, inverse
 
-# If it works in Shiny, it works in surveydown
+# If it works in Shiny,&lt;br&gt;it works in surveydown
 
 ---
 
@@ -726,7 +946,13 @@ class: center, middle, inverse
 
 ---
 
-Generate surveys using LLMs
+class: center
+
+## Generate surveys with LLMs!
+
+&lt;center&gt;
+&lt;img src="images/llm.gif" width=80%&gt;
+&lt;/center&gt;
 
 ---
 
