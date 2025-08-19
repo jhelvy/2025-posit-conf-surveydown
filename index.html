@@ -109,8 +109,13 @@ class: center, middle, inverse
 
 # Wouldn't it be nice if there was a&lt;br&gt;"Quarto" for surveys?
 
---
+---
 
+class: middle, inverse
+
+# .font150[.center[surveydown to the rescue!]]
+
+&lt;br&gt;
 &lt;center&gt;
 &lt;img src="images/logo_surveydown.png" width=300&gt;
 &lt;/center&gt;
@@ -141,7 +146,12 @@ class: middle
 
 class: center, middle, inverse
 
-# What is `surveydown`?
+# .font150[.center[What is surveydown?]]
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;img src="images/logo_surveydown.png" width=300&gt;
+&lt;/center&gt;
 
 ---
 
@@ -466,7 +476,7 @@ background-size: cover
 
 ---
 
-class: center
+class: center, middle
 
 # A complete `surveydown` survey
 
@@ -487,6 +497,16 @@ class: center
 .font120[An **R script** defining the&lt;br&gt;survey Shiny app.]
 
 ]
+
+---
+
+class: center, middle, inverse
+
+# Don't panic!
+
+&lt;center&gt;
+&lt;img src="images/spiderman-oh-no.gif" width=100%&gt;
+&lt;/center&gt;
 
 ---
 
@@ -536,9 +556,7 @@ shiny::shinyApp(ui = ui, server = server)
 
 .rightcol35[
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-Render the `survey.qmd` file
+&lt;br&gt;&lt;br&gt;&lt;br&gt;Render the `survey.qmd` file
 
 &lt;br&gt;
 
@@ -563,7 +581,7 @@ class: middle, inverse
 # .font150[.center[PostgreSQL to the rescue!]]
 
 .leftcol[
-
+&lt;br&gt;
 &lt;center&gt;
 &lt;img src="images/logo_postgres.png" width=60%&gt;
 &lt;/center&gt;
@@ -641,7 +659,7 @@ class: center, middle
 
 class: middle, inverse, center
 
-# What can `surveydown` do?
+# .font150[What can surveydown do?]
 
 ---
 
@@ -663,7 +681,23 @@ class: middle, inverse, center
 
 ---
 
-START!
+class: inverse, middle
+
+# .center[.font150[Question types]]
+
+- text
+- textarea
+- numeric
+- mc
+- mc_multiple
+- mc_buttons
+- mc_multiple_buttons
+- select
+- slider
+- slider_numeric
+- date
+- daterange
+- matrix
 
 ---
 
@@ -823,6 +857,12 @@ sd_question(
 
 ---
 
+class: inverse, middle
+
+# .center[.font150[Conditionally display content]]
+
+---
+
 class: center
 
 # Conditionally display content
@@ -877,6 +917,12 @@ sd_show_if(
 
 ---
 
+class: inverse, middle
+
+# .center[.font150[Conditionally skip forward]]
+
+---
+
 # .center[Conditionally skip forward]
 
 &lt;center&gt;
@@ -925,7 +971,7 @@ sd_skip_forward(
 
 class: center, middle, inverse
 
-# If it works in Shiny,&lt;br&gt;it works in surveydown
+# .font150[If it works in Shiny,&lt;br&gt;it works in surveydown]
 
 ---
 
@@ -958,25 +1004,36 @@ class: center
 
 class: center, middle, inverse
 
-# What's next?
+# .font150[What's next?]
 
 ---
 
 class: center, middle
 
-# Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
+# Try out the surveydown [sdstudio package](https://github.com/surveydown-dev/sdstudio/)
 
-## `sdApps::sd_studio()`
-
----
-
-Check out the paper
+## `sdstudio::launch()`
 
 ---
 
-class: middle, center 
+Studio gif
 
-# You can help!
+---
+
+class: middle, center, inverse 
+
+# With great power comes great responsibility
+
+---
+
+# Ways to help:
+
+&lt;br&gt;
+
+## - Try it out!
+## - Post an issue
+## - Join the GitHub discussion
+## - Contribute a template
 
 ---
 
