@@ -1187,10 +1187,11 @@ background-size: cover
 
 .rightcol[
 
-### <span class="white-text">https://github.com/surveydown-dev/surveydown/</span>
+### .center[<span class="white-text">https://surveydown.org/</span>]
 
+<br>
 <center>
-<img src="images/surveydown-qr.png" width=100%>
+<img src="images/surveydown-qr.png" width=40%>
 </center>
 
 ]
