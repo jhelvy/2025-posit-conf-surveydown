@@ -57,51 +57,167 @@ posit::conf(2025)
 
 ---
 
-class: center, middle
+background-color: #000
+class: center, middle, inverse
+
+# I try to figure out what people want
 
 &lt;center&gt;
-&lt;img src="images/demo.gif" width=70%&gt;
+&lt;img src="images/crystal_ball.jpg" width=500&gt;
 &lt;/center&gt;
 
 ---
 
-background-image: url("images/images/Slide1.png")
-background-size: cover
+class: center, middle
+
+&lt;center&gt;
+&lt;img src="images/demo.gif" width=80%&gt;
+&lt;/center&gt;
 
 ---
 
-background-image: url("images/images/Slide2.png")
-background-size: cover
+class: center, middle
+
+### WYSIWYG Interface
+
+&lt;center&gt;
+&lt;img src="images/google-form.png" width=80%&gt;
+&lt;/center&gt;
 
 ---
 
-background-image: url("images/images/Slide3.png")
-background-size: cover
+class: middle
+
+.leftcol65[
+
+&lt;center&gt;
+&lt;img src="images/google-form.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol35[
+
+# Limitations
+
+&lt;br&gt;
+
+## .font80[❌] Reproducibility
+
+]
 
 ---
 
-background-image: url("images/images/Slide4.png")
-background-size: cover
+class: middle
+
+.leftcol65[
+
+&lt;center&gt;
+&lt;img src="images/google-form.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol35[
+
+# Limitations
+
+&lt;br&gt;
+
+## .font80[❌] Reproducibility
+
+## .font80[❌] Version control
+
+]
 
 ---
 
-background-image: url("images/images/Slide5.png")
-background-size: cover
+&lt;center&gt;
+&lt;img src="images/xkcd-version-control.png" width=40%&gt;
+&lt;/center&gt;
 
 ---
 
-background-image: url("images/images/Slide6.png")
-background-size: cover
+class: middle
+
+.leftcol65[
+
+&lt;center&gt;
+&lt;img src="images/google-form.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol35[
+
+# Limitations
+
+&lt;br&gt;
+
+## .font80[❌] Reproducibility
+
+## .font80[❌] Version control
+
+## .font80[❌] Limited features
+
+]
 
 ---
 
-background-image: url("images/images/Slide7.png")
-background-size: cover
+class: middle
+
+.leftcol65[
+
+&lt;center&gt;
+&lt;img src="images/google-form.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol35[
+
+# Limitations
+
+&lt;br&gt;
+
+## .font80[❌] Reproducibility
+
+## .font80[❌] Version control
+
+## .font80[❌] Limited features
+
+## .font80[❌] Open source
+
+]
 
 ---
 
-background-image: url("images/images/Slide8.png")
-background-size: cover
+.leftcol60[
+
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+&lt;img src="images/logo-quarto.png" width=50%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol40[
+
+&lt;br&gt;
+
+# ~~Limitations~~ Features
+
+&lt;br&gt;
+
+## &amp;#x2705; Reproducibility
+
+## &amp;#x2705; Version control
+
+## &amp;#x2705; Lots of Features
+
+## &amp;#x2705; Open source
+
+]
 
 ---
 
@@ -113,7 +229,7 @@ class: center, middle, inverse
 
 class: middle, inverse
 
-# .font150[.center[surveydown to the rescue!]]
+# .font140[.center[surveydown to the rescue!]]
 
 &lt;br&gt;
 &lt;center&gt;
@@ -146,7 +262,7 @@ class: middle
 
 class: center, middle, inverse
 
-# .font150[.center[What is surveydown?]]
+# .font140[.center[What is surveydown?]]
 
 &lt;br&gt;
 &lt;center&gt;
@@ -155,46 +271,20 @@ class: center, middle, inverse
 
 ---
 
-background-image: url("images/images/Slide9.png")
+background-image: url("images/images/Slide1.png")
 background-size: cover
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code1.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
----
-format: html
-echo: false
-warning: false
----
+]
 
-```{r}
-library(surveydown)
-```
-
-::: {.sd_page id=welcome}
-
-# Welcome to our survey!
-
-```{r}
-sd_question(
-  type  = "mc",
-  id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?", 
-  option = c("Yes" = "yes", "No" = "no")
-)
-
-sd_next()
-```
-
-:::
-````
-
-]]
-
-.rightcol[
+.rightcol45[
 
 .center[`survey.qmd` --&gt; Rendered survey]
 
@@ -206,41 +296,17 @@ sd_next()
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code2.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
-*---
-*format: html
-*echo: false
-*warning: false
-*---
+]
 
-```{r}
-library(surveydown)
-```
+.rightcol45[
 
-::: {.sd_page id=welcome}
-
-# Welcome to our survey!
-
-```{r}
-sd_question(
-  type  = "mc",
-  id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?", 
-  option = c("Yes" = "yes", "No" = "no")
-)
-
-sd_next()
-```
-
-:::
-````
-
-]]
-
-.rightcol[
+&lt;br&gt;&lt;br&gt;
 
 ### .center[Standard YAML header&lt;br&gt;w/options for "clean" output]
 
@@ -248,87 +314,35 @@ sd_next()
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code3.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
----
-format: html
-echo: false
-warning: false
----
+]
 
-*```{r}
-*library(surveydown)
-*```
+.rightcol45[
 
-::: {.sd_page id=welcome}
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-# Welcome to our survey!
-
-```{r}
-sd_question(
-  type  = "mc",
-  id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?", 
-  option = c("Yes" = "yes", "No" = "no")
-)
-
-sd_next()
-```
-
-:::
-````
-
-]]
-
-.rightcol[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-### .center[Load the `surveydown` package]
+### .font90[.center[Load the `surveydown` package]]
 
 ]
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code4.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
----
-format: html
-echo: false
-warning: false
----
+]
 
-```{r}
-library(surveydown) 
-```
+.rightcol45[
 
-*::: {.sd_page id=welcome}
-
-# Welcome to our survey!
-
-```{r}
-sd_question(
-  type  = "mc",
-  id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?", 
-  option = c("Yes" = "yes", "No" = "no")
-)
-
-sd_next()
-```
-
-*:::
-````
-
-]]
-
-.rightcol[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ### .center[Use Quarto fences (`:::`)&lt;br&gt;to define survey pages]
 
@@ -336,43 +350,17 @@ sd_next()
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code5.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
----
-format: html
-echo: false
-warning: false
----
+]
 
-```{r}
-library(surveydown) 
-```
+.rightcol45[
 
-::: {.sd_page id=welcome} 
-
-*# Welcome to our survey!
-*  
-*```{r}
-*sd_question(
-* type  = "mc",
-* id    = "has_fav_hero",
-* label = "Do you have a favorite super hero?",
-* option = c("Yes" = "yes", "No" = "no")
-*) 
-*  
-*sd_next()
-*```
-
-::: 
-````
-
-]]
-
-.rightcol[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ### .center[Page content]
 
@@ -384,46 +372,41 @@ library(surveydown)
 
 ---
 
-.leftcol[.code75[
+.leftcol55[
 
+&lt;center&gt;
+&lt;img src="images/survey-code5.png" width=100%&gt;
+&lt;/center&gt;
 
-```` markdown
----
-format: html
-echo: false
-warning: false
----
+]
 
-```{r}
-library(surveydown)
-```
-
-::: {.sd_page id=welcome}
-
-# Welcome to our survey!
-
-```{r}
-sd_question(
-  type  = "mc",
-  id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?", 
-  option = c("Yes" = "yes", "No" = "no")
-)
-
-sd_next()
-```
-
-:::
-````
-
-]]
-
-.rightcol[
+.rightcol45[
 
 .center[`survey.qmd` --&gt; Rendered survey]
 
 &lt;center&gt;
 &lt;img src="images/survey-app.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+.leftcol55[
+
+&lt;center&gt;
+&lt;img src="images/survey-code6.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol45[
+
+.center[`survey.qmd` --&gt; Rendered survey]
+
+&lt;center&gt;
+&lt;img src="images/survey-app.png" width=80%&gt;
+&lt;img src="images/data-preview.png" width=45%&gt;
 &lt;/center&gt;
 
 ]
@@ -442,7 +425,9 @@ class: middle, inverse
 
 class: middle, inverse
 
-# .font150[.center[Shiny to the rescue!]]
+# .font140[.center[Shiny to the rescue!]]
+
+&lt;br&gt;
 
 .leftcol[
 
@@ -461,17 +446,17 @@ class: middle, inverse
 
 ---
 
-background-image: url("images/images/Slide10.png")
+background-image: url("images/images/Slide2.png")
 background-size: cover
 
 ---
 
-background-image: url("images/images/Slide11.png")
+background-image: url("images/images/Slide3.png")
 background-size: cover
 
 ---
 
-background-image: url("images/images/Slide12.png")
+background-image: url("images/images/Slide4.png")
 background-size: cover
 
 ---
@@ -505,10 +490,12 @@ class: center, middle, inverse
 # Don't panic!
 
 &lt;center&gt;
-&lt;img src="images/spiderman-oh-no.gif" width=100%&gt;
+&lt;img src="images/spiderman-oh-no.gif" width=80%&gt;
 &lt;/center&gt;
 
 ---
+
+class: middle
 
 .leftcol65[.code90[
 
@@ -532,6 +519,8 @@ shiny::shinyApp(ui = ui, server = server)
 ]]
 
 ---
+
+class: middle
 
 .leftcol65[.code90[
 
@@ -578,7 +567,7 @@ class: middle, inverse
 
 class: middle, inverse
 
-# .font150[.center[PostgreSQL to the rescue!]]
+# .font140[.center[PostgreSQL to the rescue!]]
 
 .leftcol[
 &lt;br&gt;
@@ -595,6 +584,8 @@ class: middle, inverse
 ]
 
 ---
+
+class: middle
 
 .leftcol65[.code90[
 
@@ -637,29 +628,25 @@ Pass connection to `sd_server()`
 
 class: center, middle
 
-.leftcol20[
-
 ### supabase.com
 
 &lt;center&gt;
-&lt;img src="images/logo_supabase.png" width=80%&gt;
+&lt;img src="images/supabase-table.png" width=95%&gt;
 &lt;/center&gt;
 
-]
+---
 
-.rightcol80[
+class: center, middle
 
 &lt;center&gt;
-&lt;img src="images/supabase-table.png" width=100%&gt;
+&lt;img src="images/get-data.png" width=95%&gt;
 &lt;/center&gt;
-
-]
 
 ---
 
 class: middle, inverse, center
 
-# .font150[What can surveydown do?]
+# .font140[What can surveydown do?]
 
 ---
 
@@ -683,7 +670,7 @@ class: middle, inverse, center
 
 class: inverse, middle
 
-# .center[.font150[Question types]]
+# .center[.font140[Question types]]
 
 - text
 - textarea
@@ -859,7 +846,7 @@ sd_question(
 
 class: inverse, middle
 
-# .center[.font150[Conditionally display content]]
+# .center[.font140[Conditionally display content]]
 
 ---
 
@@ -919,7 +906,7 @@ sd_show_if(
 
 class: inverse, middle
 
-# .center[.font150[Conditionally skip forward]]
+# .center[.font140[Conditionally skip forward]]
 
 ---
 
@@ -971,7 +958,7 @@ sd_skip_forward(
 
 class: center, middle, inverse
 
-# .font150[If it works in Shiny,&lt;br&gt;it works in surveydown]
+# .font140[If it works in Shiny,&lt;br&gt;it works in surveydown]
 
 ---
 
