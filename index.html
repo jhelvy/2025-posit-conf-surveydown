@@ -650,27 +650,55 @@ class: middle, inverse, center
 
 ---
 
-## .center[Surveydown supports most common survey features]
+class: middle
 
-&lt;br&gt;&lt;br&gt;
+## .center[Surveydown is feature packed!]
 
-.leftcol25[]
+&lt;center&gt;
+&lt;img src="images/features.png" width=70%&gt;
+&lt;/center&gt;
 
-.rightcol75[
+---
 
-## - Lots of question types
+class: middle, inverse
 
-## - Conditionally display content
+.leftcol20[]
 
-## - Conditionally skip forward
+.rightcol80[
+
+# - Question types
+
+# - Conditionally display content
+
+# - Conditionally skip forward
+
+]
+ 
+---
+
+class: middle, inverse
+
+.leftcol20[]
+
+.rightcol80[
+
+# - .green[Question types]
+
+# - Conditionally display content
+
+# - Conditionally skip forward
 
 ]
 
 ---
 
-class: inverse, middle
+class: middle
 
-# .center[.font140[Question types]]
+# .center[Question types]
+
+.leftcol40[]
+
+.rightcol60[
 
 - text
 - textarea
@@ -686,11 +714,13 @@ class: inverse, middle
 - daterange
 - matrix
 
+]
+
 ---
 
 # .center[Question types: `text`]
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 .leftcol[
 
@@ -717,7 +747,7 @@ sd_question(
 
 # .center[Question types: `mc`]
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 
 .leftcol[
 
@@ -740,6 +770,7 @@ sd_question(
 
 .rightcol[
 
+&lt;br&gt;
 &lt;center&gt;
 &lt;img src="images/question-mc.png" width=100%&gt;
 &lt;/center&gt;
@@ -750,7 +781,7 @@ sd_question(
 
 # .center[Question types: `mc_multiple`]
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 
 .leftcol[
 
@@ -784,7 +815,7 @@ sd_question(
 
 # .center[Question types: `mc_buttons`]
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 
 .leftcol[
 
@@ -818,7 +849,7 @@ sd_question(
 
 # .center[Question types: `slider_numeric`]
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 
 .leftcol[
 
@@ -844,9 +875,19 @@ sd_question(
 
 ---
 
-class: inverse, middle
+class: middle, inverse
 
-# .center[.font140[Conditionally display content]]
+.leftcol20[]
+
+.rightcol80[
+
+# - Question types
+
+# - .green[Conditionally display content]
+
+# - Conditionally skip forward
+
+]
 
 ---
 
@@ -882,6 +923,10 @@ sd_question(
 )
 ```
 
+]
+
+.rightcol[
+
 app.R
 
 
@@ -891,14 +936,9 @@ sd_show_if(
 )
 ```
 
-]
+Condition ~ Target
 
-.rightcol[
-
-&lt;br&gt;
-&lt;center&gt;
-&lt;img src="images/conditional-display.gif" width=100%&gt;
-&lt;/center&gt;
+"If {condition}, then show {target}"
 
 ]
 
@@ -906,7 +946,17 @@ sd_show_if(
 
 class: inverse, middle
 
-# .center[.font140[Conditionally skip forward]]
+.leftcol20[]
+
+.rightcol80[
+
+# - Question types
+
+# - Conditionally display content
+
+# - .green[Conditionally skip forward]
+
+]
 
 ---
 
@@ -925,7 +975,10 @@ class: inverse, middle
 survey.qmd
 
 
-``` r
+```` markdown
+::: {.sd_page id=welcome}
+
+```{r}
 sd_question(
   type  = "mc",
   id    = "has_fav_hero",
@@ -933,6 +986,20 @@ sd_question(
   option = c("Yes" = "yes", "No" = "no")
 )
 ```
+
+:::
+
+::: {.sd_page id=screenout}
+
+# Thank you for your interest
+
+:::
+
+````
+
+]
+
+.rightcol[
 
 app.R
 
@@ -943,14 +1010,9 @@ sd_skip_forward(
 )
 ```
 
-]
+Condition ~ Target
 
-.rightcol[
-
-&lt;br&gt;
-&lt;center&gt;
-&lt;img src="images/screenout.gif" width=100%&gt;
-&lt;/center&gt;
+"If {condition}, then skip to {target}"
 
 ] 
 
@@ -962,9 +1024,11 @@ class: center, middle, inverse
 
 ---
 
+class: center, middle
+
 .leftcol40[
 
-# Embed interactive map using {leaflet}
+# Embedding an interactive map with {leaflet}
 
 ]
 
@@ -974,6 +1038,36 @@ class: center, middle, inverse
 &lt;iframe src="images/map.mp4" width="762" height="610" frameborder="0" allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;/center&gt;
+
+]
+
+---
+
+class: center, middle
+
+## **Live polling**: Show the response data inside the survey
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;img src="images/live-polling.gif" width=70%&gt;
+&lt;/center&gt;
+
+---
+
+class: center, middle, inverse
+
+.leftcol[
+
+&lt;center&gt;
+&lt;img src="images/deadpool-clap.gif" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol[
+
+&lt;br&gt;&lt;br&gt;
+# surveydown + LLMs&lt;br&gt;is pretty cool
 
 ]
 

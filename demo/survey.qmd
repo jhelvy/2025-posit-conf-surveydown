@@ -9,7 +9,7 @@ barcolor: "#e74c3c"
 ```{r}
 library(surveydown)
 ```
- 
+
 ::: {.sd_page id=welcome}
 
 # 🦸 Welcome to the Ultimate Superhero Survey! 🦸‍♀️
@@ -27,13 +27,17 @@ sd_question(
   label = "Do you have a favorite super hero?",
   option = c("Yes" = "yes", "No" = "no")
 )
+```
 
+```{r}
 sd_question(
   type  = "text",
   id    = "fav_hero_name",
   label = "Who is your favorite super hero?"
 )
+```
 
+```{r}
 sd_next()
 ```
 
@@ -55,7 +59,9 @@ sd_question(
     "I like them all equally" = "all"
   )
 )
+```
 
+```{r}
 sd_question(
   type  = "mc_multiple",
   id    = "hero_qualities",
@@ -71,7 +77,9 @@ sd_question(
     "Relatability/Human flaws" = "relatable"
   )
 )
+```
 
+```{r}
 sd_next()
 ```
 
@@ -97,14 +105,18 @@ sd_question(
   width = "100%", 
   direction = "vertical"
 )
+```
 
+```{r}
 sd_question(
   type  = "slider_numeric",
   id    = "responsibility_scale",
   label = "On a scale of 1-10, how much do you agree with Spider-Man's motto: 'With great power comes great responsibility'?",
   option = 1:10
 )
+```
 
+```{r}
 sd_next()
 ```
 
@@ -127,7 +139,9 @@ sd_question(
     "Take photos/videos for social media" = "social_media"
   )
 )
+```
 
+```{r}
 sd_question(
   type  = "matrix",
   id    = "superhero_rating",
@@ -146,7 +160,9 @@ sd_question(
     "🤷 Don't know" = "unknown"
   )
 )
+```
 
+```{r}
 sd_next(next_page = "personal")
 ```
 
@@ -170,7 +186,9 @@ sd_question(
     "55+" = "55_plus"
   )
 )
+```
 
+```{r}
 sd_question(
   type  = "mc",
   id    = "comic_reader",
@@ -183,13 +201,17 @@ sd_question(
     "No, not really into comics or superhero media" = "not_into"
   )
 )
+```
 
+```{r}
 sd_question(
   type  = "numeric",
   id    = "movies_watched",
   label = "Approximately how many superhero movies have you watched in the past year?"
 )
+```
 
+```{r}
 sd_next(next_page = "feedback")
 ```
 
@@ -206,7 +228,9 @@ sd_question(
   label = "In your opinion, what positive impact do superheroes have on society and culture?",
   height = "100px"
 )
+```
 
+```{r}
 sd_question(
   type  = "mc_multiple_buttons",
   id    = "survey_topics",
@@ -224,7 +248,9 @@ sd_question(
   direction = "vertical",
   width = "60%"
 )
+```
 
+```{r}
 sd_next(next_page = "completion")
 ```
 

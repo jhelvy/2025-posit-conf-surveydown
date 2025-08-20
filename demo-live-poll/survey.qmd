@@ -1,0 +1,53 @@
+---
+format: html
+echo: false
+warning: false
+theme: [superhero, custom.scss]
+barcolor: "#e74c3c"
+---
+
+```{r}
+library(surveydown)
+```
+ 
+::: {.sd_page id=welcome}
+
+# 🦸 Welcome to the Ultimate Superhero Survey! 🦸‍♀️
+
+Thank you for participating in our research on superhero preferences and powers! 
+
+<br>
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?",
+  option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+  type  = "text",
+  id    = "fav_hero_name",
+  label = "Who is your favorite super hero?"
+)
+
+sd_next()
+```
+
+:::
+
+::: {.sd_page id=results}
+
+Your favorite hero is: **`r sd_output("fav_hero_name", type = "value")`**
+
+Here's a summary of everyone's favorite hero:
+
+```{r}
+shiny::plotOutput(
+  'hero_plot', 
+  height = "600px"
+)
+```
+
+:::
