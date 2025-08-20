@@ -67,21 +67,30 @@ meta() %>%
   )
 ```
 
-background-image: url("images/blue.jpg")
-background-size: cover
-class: inverse
 
 <br><br><br><br>
+
+.leftcol[
 
 ## `r rmarkdown::metadata$title`
 
 ### `r rmarkdown::metadata$subtitle`
 
-<br><br><br><br>
+<br>
 
-**.white[John Paul Helveston]**, George Washington University
+**John Paul Helveston**<br>George Washington University
 
 `r rmarkdown::metadata$date`
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/logo-surveydown.png" width=50%>
+</center>
+
+]
 
 ---
 
@@ -130,7 +139,7 @@ class: middle
 
 <br>
 
-## .font80[❌] Reproducibility
+## .font80[❌] .font90[Reproducibility]
 
 ]
 
@@ -152,9 +161,9 @@ class: middle
 
 <br>
 
-## .font80[❌] Reproducibility
+## .font80[❌] .font90[Reproducibility]
 
-## .font80[❌] Version control
+## .font80[❌] .font90[Version control]
 
 ]
 
@@ -182,11 +191,11 @@ class: middle
 
 <br>
 
-## .font80[❌] Reproducibility
+## .font80[❌] .font90[Reproducibility]
 
-## .font80[❌] Version control
+## .font80[❌] .font90[Version control]
 
-## .font80[❌] Limited features
+## .font80[❌] .font90[Limited features]
 
 ]
 
@@ -208,13 +217,13 @@ class: middle
 
 <br>
 
-## .font80[❌] Reproducibility
+## .font80[❌] .font90[Reproducibility]
 
-## .font80[❌] Version control
+## .font80[❌] .font90[Version control]
 
-## .font80[❌] Limited features
+## .font80[❌] .font90[Limited features]
 
-## .font80[❌] Open source
+## .font80[❌] .font90[Open source]
 
 ]
 
@@ -257,11 +266,11 @@ class: center, middle, inverse
 
 class: middle, inverse
 
-# .font140[.center[surveydown to the rescue!]]
+# .font130[.center[surveydown to the rescue!]]
 
 <br>
 <center>
-<img src="images/logo_surveydown.png" width=300>
+<img src="images/logo-surveydown.png" width=300>
 </center>
 
 ---
@@ -294,7 +303,7 @@ class: center, middle, inverse
 
 <br>
 <center>
-<img src="images/logo_surveydown.png" width=300>
+<img src="images/logo-surveydown.png" width=300>
 </center>
 
 ---
@@ -460,7 +469,7 @@ class: middle, inverse
 .leftcol[
 
 <center>
-<img src="images/logo_shiny.png" width=60%>
+<img src="images/logo-shiny.png" width=60%>
 </center>
 
 ]
@@ -602,7 +611,7 @@ class: middle, inverse
 .leftcol[
 <br>
 <center>
-<img src="images/logo_postgres.png" width=60%>
+<img src="images/logo-postgres.png" width=60%>
 </center>
 
 ]
@@ -846,7 +855,7 @@ sd_question(
 
 # .center[Question types: `mc_buttons`]
 
-<br><br>
+<br>
 
 .leftcol[
 ```{r}
@@ -957,6 +966,8 @@ sd_question(
 
 ]
 
+--
+
 .rightcol[
 
 app.R
@@ -1031,6 +1042,8 @@ sd_question(
 
 ]
 
+--
+
 .rightcol[
 
 app.R
@@ -1078,7 +1091,7 @@ class: center, middle
 
 class: center, middle
 
-## **Live polling**: Show the response data inside the survey
+### **Live polling**: Show the response data inside the survey
 
 <br>
 <center>
@@ -1133,14 +1146,26 @@ class: center, middle
 ---
 
 <center>
-<img src="images/sdstudio.gif" width=90%>
+<img src="images/sdstudio-build.gif" width=90%>
+</center>
+
+---
+
+<center>
+<img src="images/sdstudio-preview.gif" width=90%>
+</center>
+
+---
+
+<center>
+<img src="images/sdstudio-data.gif" width=90%>
 </center>
 
 ---
 
 class: middle, center, inverse 
 
-# With great power comes great responsibility
+# With great power<br>comes great responsibility
 
 ---
 
@@ -1169,8 +1194,6 @@ class: middle
 ---
 
 class: inverse 
-background-image: url("images/blue.jpg")
-background-size: cover
 
 <br>
 
