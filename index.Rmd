@@ -1126,11 +1126,15 @@ class: center, middle
 
 # Try out the surveydown [sdstudio package](https://github.com/surveydown-dev/sdstudio/)
 
+<br>
+
 ## `sdstudio::launch()`
 
 ---
 
-Studio gif
+<center>
+<img src="images/sdstudio.gif" width=90%>
+</center>
 
 ---
 
@@ -1140,14 +1144,27 @@ class: middle, center, inverse
 
 ---
 
-# Ways to help:
+class: middle
+
+# .center[Ways to help:]
 
 <br>
 
+## .center[https://github.com/surveydown-dev/surveydown/]
+
+<br>
+
+.leftcol30[]
+
+.rightcol70[
+
 ## - Try it out!
+## - Give it a ⭐
 ## - Post an issue
 ## - Join the GitHub discussion
 ## - Contribute a template
+
+]
 
 ---
 
@@ -1157,11 +1174,26 @@ background-size: cover
 
 <br>
 
-# Thanks!
+.leftcol[
+
+# .center[Thanks!]
 
 <br>
+<center>
+<img src="images/deadpool-heart.gif" width=70%>
+</center>
 
-### <span class="white-text">https://jhelvy.github.io/2025-posit-conf-surveydown</span>
+]
+
+.rightcol[
+
+### <span class="white-text">https://github.com/surveydown-dev/surveydown/</span>
+
+<center>
+<img src="images/surveydown-qr.png" width=100%>
+</center>
+
+]
 
 <style>
 .white-text a {
