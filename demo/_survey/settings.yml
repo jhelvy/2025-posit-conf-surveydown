@@ -1,6 +1,7 @@
 # ! JUST READ - don't change the content of this file
-# Server settings with YAML header values and defaults
-use_cookies: yes
+# Server settings with final resolved parameters
+# (includes sd_server() parameters, YAML header, and defaults)
+use_cookies: no
 auto_scroll: no
 rate_survey: no
 all_questions_required: no
@@ -8,4 +9,8 @@ system_language: en
 highlight_unanswered: yes
 highlight_color: gray
 capture_metadata: yes
+required_questions:
+- has_fav_hero
+- hero_universe
+- dream_power
 

@@ -1,6 +1,6 @@
 ---
-title: "Introducing {surveydown}"
-subtitle: "An open-source platform for programmable, markdown-based surveys"
+title: "Introducing surveydown"
+subtitle: "An open-source platform<br>for programmable, <br>markdown-based surveys"
 date: "posit::conf(2025)"
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
@@ -68,13 +68,13 @@ meta() %>%
 ```
 
 
-<br><br><br><br>
+<br><br>
 
 .leftcol[
 
-## `r rmarkdown::metadata$title`
+## **`r rmarkdown::metadata$title`**
 
-### `r rmarkdown::metadata$subtitle`
+### .font110[`r rmarkdown::metadata$subtitle`]
 
 <br>
 
@@ -86,6 +86,7 @@ meta() %>%
 
 .rightcol[
 
+<br>
 <center>
 <img src="images/logo-surveydown.png" width=50%>
 </center>
@@ -101,6 +102,14 @@ class: center, middle, inverse
 
 <center>
 <img src="images/crystal_ball.jpg" width=500>
+</center>
+
+---
+
+class: center, middle, inverse
+
+<center>
+<img src="images/prof-x.gif" width=80%>
 </center>
 
 ---
@@ -297,6 +306,7 @@ class: middle
 
 ---
 
+name: whatis
 class: center, middle, inverse
 
 # .font140[.center[What is surveydown?]]
@@ -680,6 +690,19 @@ class: center, middle
 
 <center>
 <img src="images/get-data.png" width=95%>
+</center>
+
+---
+
+template: whatis
+
+---
+
+background-color: #fff
+class: middle, center
+
+<center>
+<img src="images/technologies.svg" width=100%>
 </center>
 
 ---
