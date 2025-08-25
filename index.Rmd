@@ -1222,12 +1222,13 @@ class: inverse
 
 .leftcol[
 
-# .center[Thanks!]
+## .center[Thanks!]
 
-<br>
 <center>
 <img src="images/deadpool-heart.gif" width=70%>
 </center>
+
+.center[This work was sponsored by the<br>Alfred P. Sloan Foundation]
 
 ]
 
